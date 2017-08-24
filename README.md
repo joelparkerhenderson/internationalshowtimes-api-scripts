@@ -47,15 +47,15 @@ Use the demo scripts:
 
 Using the functions.sh file:
 
-    $ cinepass_get_cinema_id_by_name_and_location "AMC Empire 25" "40.756359,-73.988873"
+    cinepass_get_cinema_id_by_name_and_location "AMC Empire 25" "40.756359,-73.988873"
     41514
 
-    $ cinepass_get_movie_id_by_title "Spider-Man: Homecoming"
+    cinepass_get_movie_id_by_title "Spider-Man: Homecoming"
     20345
 
-    $ get-showtimes-by-cinema-id-and-movie-id 41514 20345 | 
-    jq -r '.showtimes[].start_at'
-    2017-08-24T12:20:00-04:00
+    cinepass_get_showtimes_by_cinema_id_and_movie_id 41514 20345
+    ...list of showtimes
+
 
 ## Sample data
 
