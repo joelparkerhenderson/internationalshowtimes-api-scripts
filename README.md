@@ -1,6 +1,6 @@
 # Demo of the International Showtimes API 
 
-This demo connects to the International Showtimes API by Cinepass, to get data about cinemas, movies, showtimes, and the like.
+This demo connects to the International Showtimes API by Cinepass, to get data about cinemas, movies, showtimes, etc.
 
 To start, please see [International Showtimes API by Cinepass](https://api.cinepass.de/documentation/)
 
