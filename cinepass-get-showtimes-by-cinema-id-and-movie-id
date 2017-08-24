@@ -1,0 +1,27 @@
+#!/bin/sh
+
+## 
+# Cinepass API script to get showtimes by cinema id and movie id
+#
+# Example:
+#
+#     $ export CINEPASS_API_KEY=123456679
+#     $ get-showtimes-by-cinema-id-and-movie-id 41514 20345
+#
+# Tracking:
+#
+#   * Command: cinepass-get-showtimes-by-cinema-id-and-movie-id
+#   * Version: 1.0.0
+#   * Created: 2017-08-22
+#   * Updated: 2017-08-24
+#   * License: GPL
+#   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
+##
+
+cinema_id="$1"
+movie_id="$2"
+
+curl -sSLG "http://api.cinepass.de/v4/showtimes" \
+  -H "X-Api-Key: $CINEPASS_API_KEY" \
+  --data-urlencode "cinema_id=$cinema_id" \
+  --data-urlencode "movie_id=$movie_id" 
