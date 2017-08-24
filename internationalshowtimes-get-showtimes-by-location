@@ -6,7 +6,7 @@
 # Example:
 #
 #     $ export INTERNATIONALSHOWTIMES_API_KEY=123456679
-#     $ get-showtimes-by-location "40.756359,-73.988873"
+#     $ internationalshowtimes-get-showtimes-by-location "40.756359,-73.988873"
 #
 # Tracking:
 #
