@@ -4,7 +4,6 @@ This demo connects to the International Showtimes API to get a list of movie sho
 
 To start, please see [International Showtimes API by Cinepass](https://api.cinepass.de/documentation/)
 
-
 The API provides URIs that look like this:
 
     http://api.cinepass.de/v4/showtimes/
@@ -22,7 +21,27 @@ The URI is a typical RESTful method with these pieces:
 The API uses an API key that is typically sent as an HTTP header.
 
 
-## Usage
+## Examples
+
+Examples of using these scripts:
+
+    $ cinepass-get-cinemas-by-location "40.756359,-73.988873"
+    ... JSON list of cinemas near Grand Central Station in New York City
+
+    $ cinepass-get-cinema-id-by-name-and-location "AMC Empire 25" 40.756359,-73.988873"
+    41514
+
+    $ cinepass-get-movies-by-title "Spider-Man"
+    ... JSON list of movies that have Spider-Man in the title
+
+    $ cinepass-get-movie-id-by-title "Spider-Man: Homecoming"
+    20345
+
+    $ cinepass-get-showtimes-by-cinema-id-and-movie-id 41514 20345
+    ... JSON list of showtimes for AMC Emipre 25 in New York City for Spider-Man: Homecoming
+
+
+## Setup
 
 Get your own API key:
 
@@ -33,28 +52,6 @@ Get your own API key:
   3. These demo scripts use a convention of storing the API key in a shell environment variable, like this:
 
          export CINEPASS_API_KEY="a1b2c3d4e5f6g7h8i9j0" 
-
-Use the demo scripts:
-
-  1. Edit any of the demo scripts as you like.
-
-  2. Run the script.
-
-  3. The output is typical JSON text.
-
-
-## Examples
-
-Using the functions.sh file:
-
-    cinepass_get_cinema_id_by_name_and_location "AMC Empire 25" "40.756359,-73.988873"
-    41514
-
-    cinepass_get_movie_id_by_title "Spider-Man: Homecoming"
-    20345
-
-    cinepass_get_showtimes_by_cinema_id_and_movie_id 41514 20345
-    ...list of showtimes
 
 
 ## Sample data
