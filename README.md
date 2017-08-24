@@ -38,7 +38,7 @@ Examples of using these scripts:
     20345
 
     $ cinepass-get-showtimes-by-cinema-id-and-movie-id 41514 20345
-    ... JSON list of showtimes for AMC Emipre 25 in New York City for Spider-Man: Homecoming
+    ... JSON list of showtimes at AMC Empire 25 of Spider-Man: Homecoming
 
 
 ## Setup
