@@ -1,16 +1,16 @@
 #!/bin/sh
 
 ## 
-# Cinepass API script to get movies by title
+# International Showtimes API script to get movies by title
 #
 # Example:
 #
-#     $ export CINEPASS_API_KEY=123456679
+#     $ export INTERNATIONALSHOWTIMES_API_KEY=123456679
 #     $ get-movies-by-title "spider-man"
 #
 # Tracking:
 #
-#   * Command: cinepass-get-movies-by-title
+#   * Command: internationalshowtimes-get-movies-by-title
 #   * Version: 1.0.0
 #   * Created: 2017-08-22
 #   * Updated: 2017-08-24
@@ -20,7 +20,7 @@
 
 title="$1"
 
-curl -sSLG "http://api.cinepass.de/v4/movies" \
-  -H "X-Api-Key: $CINEPASS_API_KEY" \
+curl -sSLG "http://api.internationalshowtimes.com/v4/movies" \
+  -H "X-Api-Key: $INTERNATIONALSHOWTIMES_API_KEY" \
   --data-urlencode "search_field=title" \
   --data-urlencode "search_query=$title"

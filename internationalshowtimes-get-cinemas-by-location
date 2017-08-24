@@ -1,0 +1,25 @@
+#!/bin/sh
+
+## 
+# International Showtimes API script to get cinemas by location
+#
+# Example:
+#
+#     $ export INTERNATIONALSHOWTIMES_API_KEY=123456679
+#     $ get-cinemas-by-location "40.756359,-73.988873"
+#
+# Tracking:
+#
+#   * Command: internationalshowtimes-get-cinemas-by-location
+#   * Version: 2.0.0
+#   * Created: 2017-08-22
+#   * Updated: 2017-08-24
+#   * License: GPL
+#   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
+##
+
+location="$1"
+
+curl -sSLG "http://api.internationalshowtimes.com/v4/cinemas" \
+  -H "X-Api-Key: $INTERNATIONALSHOWTIMES_API_KEY" \
+  --data-urlencode "location=$location"
