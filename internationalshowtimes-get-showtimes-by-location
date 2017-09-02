@@ -3,6 +3,10 @@
 ## 
 # International Showtimes API script to get showtimes by location
 #
+# Syntax:
+#
+#    internationalshowtimes-get-showtimes-by-location <latitude> <longitude>
+#
 # Example:
 #
 #     $ export INTERNATIONALSHOWTIMES_API_KEY=123456679
@@ -11,16 +15,17 @@
 # Tracking:
 #
 #   * Command: internationalshowtimes-get-showtimes-by-location
-#   * Version: 2.0.0
+#   * Version: 3.0.0
 #   * Created: 2017-08-22
-#   * Updated: 2017-08-24
+#   * Updated: 2017-09-02
 #   * License: GPL
 #   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 ##
 
-location="$1"
+latitude="$1"
+longitude="$2"
 
 curl -sSLG "http://api.internationalshowtimes.com/v4/showtimes" \
   -H "X-Api-Key: wd0nBUl09eTwmBuOWXM3FlfENAUeC4Ai" \
   --data-urlencode "lang=en" \
-  --data-urlencode "location=$1"
+  --data-urlencode "location=$latitude,$longitude"

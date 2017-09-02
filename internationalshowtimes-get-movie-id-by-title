@@ -3,17 +3,22 @@
 ## 
 # International Showtimes API script to get one movie id by title
 #
+# Syntax:
+#
+#     internationalshowtimes-get-movie-id-by-title <title>
+#
 # Example:
 #
 #     $ export INTERNATIONALSHOWTIMES_API_KEY=123456679
-#     $ get-movie-id-by-title "spider-man"
+#     $ internationalshowtimes-get-movie-id-by-title "spider-man"
 #
-# Tracking:
+#
+# ## Tracking
 #
 #   * Command: internationalshowtimes-get-movie-id-by-title.sh
-#   * Version: 1.0.0
+#   * Version: 3.0.0
 #   * Created: 2017-08-22
-#   * Updated: 2017-08-24
+#   * Updated: 2017-09-02
 #   * License: GPL
 #   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 ##

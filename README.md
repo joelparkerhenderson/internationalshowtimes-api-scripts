@@ -9,10 +9,11 @@ To start, please see [International Showtimes API](https://api.internationalshow
 
 Examples of using these scripts:
 
-    $ internationalshowtimes-get-cinemas-by-location "40.756359,-73.988873"
-    ... JSON list of cinemas near Grand Central Station in New York City
+    $ internationalshowtimes-get-cinemas-by-location 40.756359 -73.988873
+    ... JSON list of cinemas near latitude and longitude 
+        of Grand Central Station in New York City
 
-    $ internationalshowtimes-get-cinema-id-by-name-and-location "AMC Empire 25" 40.756359,-73.988873"
+    $ internationalshowtimes-get-cinema-id-by-name-and-location "AMC Empire 25" 40.756359 -73.988873
     41514
 
     $ internationalshowtimes-get-movies-by-title "Spider-Man"
@@ -22,7 +23,8 @@ Examples of using these scripts:
     20345
 
     $ internationalshowtimes-get-showtimes-by-cinema-id-and-movie-id 41514 20345
-    ... JSON list of showtimes at AMC Empire 25 of Spider-Man: Homecoming
+    ... JSON list of showtimes at cinema id 41514 and movie id 20345,
+        meaing cinema "AMC Empire 25" and movie "Spider-Man: Homecoming"
 
 
 ## API overview
@@ -63,7 +65,7 @@ Cinema:
 
   * AMC Empire 25
   * New York City
-  * Street address: 234 W 42nd St, New York, NY 10036, USA
+  * Street address: 234 W 42nd St, New York, NY, 10036, US
   * Latitude: 40.756359
   * Longitude: -73.988873
   * Location is within 2 kilometers of Grand Central Station
@@ -78,7 +80,16 @@ Location:
 
   * Grand Central Station
   * New York City
-  * Street address: 89 E 42nd St, New York, NY 10017, USA
+  * Street address: 89 E 42nd St, New York, NY, 10017, US
   * Latitude: 40.7527
   * Longitude: -73.9772
 
+
+## Tracking
+
+  * Package: demo_international_showtimes_api
+  * Version: 3.0.0
+  * Created: 2017-08-22
+  * Updated: 2017-09-02
+  * License: GPL
+  * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
