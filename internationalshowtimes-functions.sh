@@ -14,8 +14,8 @@
 ##
 
 internationalshowtimes_get_cinemas_by_location(){
-  latitude="$1"
-  longitude="$2"
+  latitude="${1:-$LATITUDE}"
+  longitude="${2:-$LONGITUDE}"
   curl -sSLG "http://api.internationalshowtimes.com/v4/cinemas" \
     -H "X-Api-Key: $INTERNATIONALSHOWTIMES_API_KEY" \
     --data-urlencode "location=$latitude,$longitude"
@@ -23,8 +23,8 @@ internationalshowtimes_get_cinemas_by_location(){
 
 internationalshowtimes_get_cinema_id_by_name_and_location(){
   name="$1"
-  latitude="$2"
-  longitude="$3"
+  latitude="${2:-$LATITUDE}"
+  longitude="${3:-$LONGITUDE}"
   curl -sSLG "http://api.internationalshowtimes.com/v4/cinemas" \
     -H "X-Api-Key: $INTERNATIONALSHOWTIMES_API_KEY" \
     --data-urlencode "location=$latitude,$longitude"
@@ -71,9 +71,9 @@ internationalshowtimes_get_datetimes_by_cinema_id_and_movie_id(){
 
 internationalshowtimes_get_datetimes_by_cinema_name_and_location_and_movie_title(){
   cinema_name="$1"
-  latitude="$2"
-  longitude="$3"
-  movie_title="$4"
+  movie_title="$2"
+  latitude="${3:-$LATITUDE}"
+  longitude="${4:-$LONGITUDE}"
   cinema_id=$(internationalshowtimes_get_cinema_id_by_name_and_location "$cinema_name" "$latitude" "$longitude")
   movie_id=$(internationalshowtimes_get_movie_id_by_title "$movie_title")
   internationalshowtimes_get_datetimes_by_cinema_id_and_movie_id "$cinema_id" "$movie_id"

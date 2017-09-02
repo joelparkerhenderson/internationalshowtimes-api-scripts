@@ -5,12 +5,16 @@
 #
 # Syntax:
 #
-#     internationalshowtimes-get-cinemas-by-location <latitude> <longitude>
+#     internationalshowtimes-get-cinemas-by-location [latitude longitude]
 #
 # Example:
 #
-#     $ export INTERNATIONALSHOWTIMES_API_KEY=123456679
-#     $ internationalshowtimes-get-cinemas-by-location "40.756359,-73.988873"
+#     $ internationalshowtimes-get-cinemas-by-location 40.756359 -73.988873
+#
+# Defaults:
+#
+#   * `latitude`: $LATITUDE
+#   * `longitude`: $LONGITUDE
 #
 #
 # ## Tracking
@@ -23,8 +27,9 @@
 #   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 ##
 
-location="$1"
+latitude="${1:-$LATITUDE}"
+longitude="${2:-$LONGITUDE}"
 
 curl -sSLG "http://api.internationalshowtimes.com/v4/cinemas" \
   -H "X-Api-Key: $INTERNATIONALSHOWTIMES_API_KEY" \
-  --data-urlencode "location=$location"
+  --data-urlencode "location=$latitude,$longitude"

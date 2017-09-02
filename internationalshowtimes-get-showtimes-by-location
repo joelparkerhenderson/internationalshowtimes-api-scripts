@@ -5,14 +5,20 @@
 #
 # Syntax:
 #
-#    internationalshowtimes-get-showtimes-by-location <latitude> <longitude>
+#     internationalshowtimes-get-showtimes-by-location <latitude> <longitude>
 #
 # Example:
 #
 #     $ export INTERNATIONALSHOWTIMES_API_KEY=123456679
 #     $ internationalshowtimes-get-showtimes-by-location "40.756359,-73.988873"
 #
-# Tracking:
+# Defaults:
+#
+#   * `latitude`: $LATITUDE
+#   * `longitude`: $LONGITUDE
+#
+#
+# ## Tracking
 #
 #   * Command: internationalshowtimes-get-showtimes-by-location
 #   * Version: 3.0.0
@@ -22,9 +28,8 @@
 #   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 ##
 
-latitude="$1"
-longitude="$2"
-
+latitude="${1:-$LATITUDE}"
+longitude="${2:-$LONGITUDE}"
 curl -sSLG "http://api.internationalshowtimes.com/v4/showtimes" \
   -H "X-Api-Key: wd0nBUl09eTwmBuOWXM3FlfENAUeC4Ai" \
   --data-urlencode "lang=en" \

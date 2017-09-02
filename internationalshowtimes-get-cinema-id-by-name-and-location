@@ -5,12 +5,17 @@
 #
 # Syntax:
 #
-#     internationalshowtimes-get-cinema-id-by-name-and-location <name> <latitude> <longitude>
+#     internationalshowtimes-get-cinema-id-by-name-and-location <name> [latitude longitude]
 #
 # Example:
 #
 #     $ export INTERNATIONALSHOWTIMES_API_KEY=123456679
 #     $ internationalshowtimes-get-cinema-id-by-name-and-location "AMC Empire 25" 40.756359 -73.988873
+#
+# Defaults:
+#
+#   * `latitude`: $LATITUDE
+#   * `longitude`: $LONGITUDE
 #
 #
 # ## Tracking
@@ -24,8 +29,8 @@
 ##
 
 name="$1"
-latitude="$2"
-longitude="$3"
+latitude="${2:-$LATITUDE}"
+longitude="${3:-$LONGITUDE}"
 
 curl -sSLG "http://api.internationalshowtimes.com/v4/cinemas" \
   -H "X-Api-Key: $INTERNATIONALSHOWTIMES_API_KEY" \
